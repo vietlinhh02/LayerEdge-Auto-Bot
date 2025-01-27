@@ -159,7 +159,7 @@ class LayerEdgeConnection {
             : Wallet.createRandom();
     }
 
-    async makeRequest(method, url, config = {}, retries = 30) {
+    async makeRequest(method, url, config = {}, retries = 3) {
         for (let i = 0; i < retries; i++) {
             try {
                 const response = await axios({
@@ -184,6 +184,9 @@ class LayerEdgeConnection {
         }
         return null;
     }
+
+
+    
 
     async checkInvite() {
         const inviteData = {
@@ -236,17 +239,9 @@ async function autoRegister() {
         logger.warn('No proxies found', 'Running without proxy support');
     }
 
-    const numberOfWallets = parseInt(await askQuestion("How many wallets/ref do you want to create? "));
-    if (isNaN(numberOfWallets) || numberOfWallets <= 0) {
-        logger.error('Invalid number of wallets specified');
-        return;
-    }
-
-    const refCode = await askQuestion("Enter your referral code (example: knYyWnsE): ");
-    if (!refCode) {
-        logger.error('Referral code is required');
-        return;
-    }
+    // Set default values directly
+    const numberOfWallets = 1;
+    const refCode = 'Znz6p4gm';
 
     logger.info('Starting wallet creation and registration', `Target: ${numberOfWallets} wallets`);
 
