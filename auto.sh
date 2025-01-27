@@ -7,7 +7,7 @@ SESSION_NAME="LayerEdge-AutoBot"       # Tên screen session
 REPO_URL="https://github.com/vietlinhh02/LayerEdge-Auto-Bot.git"  # URL GitHub repo
 NODE_VERSION="18"                      # Phiên bản Node.js yêu cầu
 LOG_FILE="layeredge.log"               # Tên file log
-INSTALL_DIR="$HOME/layeredge-bot"      # Thư mục cài đặt
+INSTALL_DIR="$HOME/LayerEdge-Auto-Bot"      # Thư mục cài đặt
 
 # ==============================================
 # Cài đặt màu sắc cho terminal
